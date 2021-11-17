@@ -12,6 +12,7 @@ productorOperations.getProductor = async function(req, res){
 }
 
 productorOperations.crearProductor = async function(req, res){
+	console.log(req.body);
 	const productor =  new coleccionProductores(req.body);
 	await productor.save();
 	res.json({"status":"Dato de productor guardado"});
