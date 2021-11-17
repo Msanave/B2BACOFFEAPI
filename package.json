@@ -1,0 +1,19 @@
+{
+  "name": "b2bcoffeapi",
+  "version": "1.0.0",
+  "description": "Proyecto para creacion API",
+  "main": "index.js",
+  "scripts": {
+   "goserver":"nodemon index.js"
+  },
+  "author": "Marlon Sanchez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

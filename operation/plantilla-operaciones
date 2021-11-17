@@ -1,0 +1,31 @@
+const coleccion=require('<ARCHIVO DE ESQUEMA>');
+const operaciones =  {};
+
+operaciones.getProductor = async funtion(req, res) {}
+
+operaciones.getProductores = async funtion(req, res) {}
+
+operaciones.crearProductor = async funtion(req, res) {}
+
+operaciones.crearComprador = async funtion(req, res) {}
+
+operaciones.actualizarProductor = async funtion(req, res) {}
+
+operaciones.actualizarProductores = async funtion(req, res) {}
+
+operaciones.actualizarComprador = async funtion(req, res) {}
+
+operaciones.actualizarCompradores = async funtion(req, res) {}
+
+operaciones.borrarArrendatario = async funtion(req, res) {}
+
+operaciones.borrarProductor = async funtion(req, res) {}
+
+operaciones.borrarProductores = async funtion(req, res) {}
+
+operaciones.borrarComprador = async funtion(req, res) {}
+
+operaciones.borrarCompradores = async funtion(req, res) {}
+
+module.exports = operaciones 
+
