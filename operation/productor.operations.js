@@ -2,12 +2,12 @@ const coleccionProductores = require('../schemas/productor.schema')
 const productorOperations =  {};
 
 productorOperations.getProductores = async function(req, res){
-	const productor =  await coleccionProductores.find();
+	const productores =  await coleccionProductores.find();
 	res.json(productores);
 }
 
 productorOperations.getProductor = async function(req, res){
-	const productor =  await coleccionProductores.find();
+	const productor =  await coleccionProductores.findById(req.params.id);
 	res.json(productor);
 }
 
