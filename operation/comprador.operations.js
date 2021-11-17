@@ -2,7 +2,7 @@ const coleccionCompradores = require('../schemas/comprador.schema')
 const compradorOperations =  {};
 
 compradorOperations.getCompradores = async function(req, res){
-	const comprador =  await coleccionCompradores.find();
+	const compradores =  await coleccionCompradores.find();
 	res.json(compradores);
 }
 
