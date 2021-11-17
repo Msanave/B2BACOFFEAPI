@@ -7,7 +7,7 @@ productorOperations.getProductores = async function(req, res){
 }
 
 productorOperations.getProductor = async function(req, res){
-	const productor =  await coleccionProductores.find();
+	const productor =  await coleccionProductores.findById(req.params.id);
 	res.json(productor);
 }
 

@@ -7,7 +7,7 @@ compradorOperations.getCompradores = async function(req, res){
 }
 
 compradorOperations.getComprador = async function(req, res){
-	const comprador =  await coleccionCompradores.find();
+	const comprador =  await coleccionCompradores.findById(req.params.id);
 	res.json(comprador);
 }
 
