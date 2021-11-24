@@ -2,7 +2,7 @@ const mongoose= require ('mongoose');
 const {Schema} =mongoose;
 
 const compradorSchema = new Schema({
-	id:{type:String, required: true},
+	codigoComprador:{type:String, required: true},
 	nombre:{type:String, required: true},
 	documento:{type:Number, required: true},
 	documento: {

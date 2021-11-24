@@ -2,22 +2,45 @@ const coleccionCompradores = require('../schemas/comprador.schema')
 const compradorOperations =  {};
 
 compradorOperations.getCompradores = async function(req, res){
+	try{
 	const compradores =  await coleccionCompradores.find();
-	res.json(compradores);
+	res.status(200).json(compradores);
+	}
+	catch(err){
+		res.status(404).json({message:err.message})
+	}
 }
+
 
 compradorOperations.getComprador = async function(req, res){
+	try{
 	const comprador =  await coleccionCompradores.findById(req.params.id);
-	res.json(comprador);
+	if(comprador==null) {
+	res.status(404).json({message:"Not found"})
+	}
+	else{
+		res.status(200).json(comprador);
+		}
+	}
+	catch(err) {
+		res.status(400).json({message:"Bad request"})
+	}		
 }
 
+
 compradorOperations.crearComprador = async function(req, res){
-	const comprador =  new coleccionCompradores(req.body);
-	await comprpador.save();
-	res.json({"status":"Dato de comprador guardado"});
+	try{
+		const comprador =  new coleccionCompradores(req.body);
+		await comprpador.save();
+		res.status(201).json({message:"Bad request"})
+		}
+	catch(err){
+		res.status(400).json({message: "Bad request"})
+	}	
 }
 
 compradorOperations.actualizarComprador = async function(req, res){
+	try{
 	const {id} = req.params;
 	const comprador={
 		nombres:req.body.nombres,
@@ -27,14 +50,22 @@ compradorOperations.actualizarComprador = async function(req, res){
 			numero: req.body.documento.numero
 		}
 	}
-	console.log(comprador)
 	await coleccionCompradores.findByAndUpdate(req.params.id,{$set:comprador},{new: true});
-	res.json({"status":"Dato de comprador actualizado"});
+	res.status(200).json({Comprador});
+}
+	catch(err){
+	res.status(200).json({message: err.message})
+}
 }
 
 compradorOperations.borrarComprador= async function(req, res){
+	try{
 	await coleccionCompradores.findByAndRemove(req.params.id)
-	res.json({"status":"Dato de comprador borrado"});
+res.status(200).json({message:"Delete OK"});
+}
+catch(err){
+	res.status(404).json({message: err.message})
+}	
 }
 
 module.exports=compradorOperations
