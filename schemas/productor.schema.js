@@ -4,7 +4,7 @@ const {Schema} =mongoose;
 const productorSchema = new Schema({
 	codigoProductor:{type:String, required: true},
 	nombre:{type:String, required: true},
-	documento:{type:Number, unique : true, required: true, dropDups: true},
+	documento:{type:Number, unique: true, required: true, dropDups: true},
 	pais:{type:Array, required: true},
 	departamento:{type:Array, required: true},
 	municipio:{type:Array, required: true},
