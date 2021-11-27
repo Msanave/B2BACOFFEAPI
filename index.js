@@ -13,6 +13,7 @@ app.use(express.json())
 //Lista de rutas base
 app.use('/api/productor', require('./routes/productor.routes'));
 app.use('/api/comprador', require('./routes/comprador.routes'));
+app.use('/api/ingreso',require('./routes/ingreso.routes'));
 
 
 

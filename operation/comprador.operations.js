@@ -31,7 +31,7 @@ compradorOperations.getComprador = async function(req, res){
 compradorOperations.crearComprador = async function(req, res){
 	try{
 		const comprador =  new coleccionCompradores(req.body);
-		await comprpador.save();
+		await comprador.save();
 		res.status(201).json({message:"Bad request"})
 		}
 	catch(err){
@@ -50,6 +50,7 @@ compradorOperations.actualizarComprador = async function(req, res){
 			numero: req.body.documento.numero
 		}
 	}
+
 	await coleccionCompradores.findByAndUpdate(req.params.id,{$set:comprador},{new: true});
 	res.status(200).json({Comprador});
 }
