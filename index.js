@@ -1,11 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const mongoose = require('./conexion');
 const app = express();
 
 //Configuración
 app.set('port', process.env.PORT || 3000)
 app.use(morgan('dev'))
+app.use(cors())
 app.use(express.json())
 
 //Lista de rutas base
