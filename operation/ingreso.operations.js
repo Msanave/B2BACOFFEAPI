@@ -32,10 +32,10 @@ ingresoOperations.crearIngreso = async function(req, res){
 	try{
 		const ingreso =  new coleccionIngresos(req.body);
 		await ingreso.save();
-		res.status(201).json({message:"Bad request"})
+		res.status(201).json({ingreso})
 		}
 	catch(err){
-		res.status(400).json({message: "Bad request"})
+		res.status(400).json({message:"Bad request", errorMssg: err})
 	}	
 }
 
