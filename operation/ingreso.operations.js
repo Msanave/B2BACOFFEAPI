@@ -47,8 +47,8 @@ ingresoOperations.actualizarIngreso = async function(req, res){
             Productor:req.body.Productor,
             Comprador: req.body.Comprador
         },
-        nombres:req.body.nombres,
-		apellidos: req.body.nombres,
+        nombre:req.body.nombre,
+		apellido: req.body.apellido,
 		celular: req.body.celular,
         correo: req.body.correo
 		}
