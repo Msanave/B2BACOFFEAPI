@@ -4,8 +4,10 @@
   "description": "Proyecto para creacion API",
   "main": "index.js",
   "scripts": {
-    "goserver": "nodemon index.js"
+    "start": "node src/index.js",
+    "test": "echo \"Error: notest specified\" && exit 1"
   },
+  "Keywords":[],
   "author": "Marlon Sanchez",
   "license": "ISC",
   "dependencies": {

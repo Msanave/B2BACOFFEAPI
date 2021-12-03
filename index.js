@@ -9,11 +9,14 @@ app.set('port', process.env.PORT || 3000)
 app.use(morgan('dev'))
 app.use(cors())
 app.use(express.json())
+app.use( express.static('public') );
 
 //Lista de rutas base
 app.use('/api/productor', require('./routes/productor.routes'));
 app.use('/api/comprador', require('./routes/comprador.routes'));
 app.use('/api/ingreso',require('./routes/ingreso.routes'));
+
+app.get('*', (req,res) => { res.sendFile( path.resolve('./public/index.html') ) });
 
 
 
