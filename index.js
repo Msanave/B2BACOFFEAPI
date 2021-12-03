@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const mongoose = require('./conexion');
 const app = express();
+const path = require('path');
 
 //Configuración
 app.set('port', process.env.PORT || 3000);
@@ -17,8 +18,6 @@ app.use('/api/comprador', require('./routes/comprador.routes'));
 app.use('/api/ingreso',require('./routes/ingreso.routes'));
 
 app.get('*', (req,res) => { res.sendFile( path.resolve('./public/index.html') ) });
-
-
 
 //Arranque
 app.listen(app.get('port'), ()=> {
