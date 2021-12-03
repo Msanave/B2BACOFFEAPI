@@ -7,7 +7,7 @@
     "start": "node index.js",
     "test": "echo \"Error: notest specified\" && exit 1"
   },
-  "Keywords":[],
+  "Keywords": [],
   "author": "Marlon Sanchez",
   "license": "ISC",
   "dependencies": {
